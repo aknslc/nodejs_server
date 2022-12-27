@@ -8,8 +8,6 @@ import {
 } from '../controllers/order.js';
 const router = express.Router();
 
-import { verifyAdmin, verifyToken, verifyUser } from '../utils/verifyToken.js';
-
 // get Orders
 router.get('/', getOrders);
 // get Order
