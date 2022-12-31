@@ -50,8 +50,8 @@ export const login = async (req, res, next) => {
                 id: user._id,
                 isAdmin: user.isAdmin
             },
-            process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "1d" }
+            process.env.ACCESS_TOKEN_SECRET
+           
         )
 
         const { isAdmin, password, ...other } = user._doc
