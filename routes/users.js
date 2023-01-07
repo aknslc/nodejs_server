@@ -9,13 +9,13 @@ import { verifyUser, verifyAdmin } from '../utils/verifyToken.js'
 const router = express.Router();
 
 // get users
-router.get('/', verifyAdmin, getUsers);
+router.get('/',getUsers);
 // get user
-router.get('/:id', verifyUser, getUser);
+router.get('/:id',getUser);
 // update user
-router.put('/:id', verifyUser, updateUser);
+router.put('/:id',updateUser);
 // delete user
-router.delete('/:id', verifyUser, deleteUser);
+router.delete('/:id',deleteUser);
 
 
 export default router;

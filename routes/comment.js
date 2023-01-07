@@ -7,11 +7,11 @@ const router = express.Router();
 
 
 // create product
-router.post('/:id', verifyToken, createComment)
+router.post('/:id',createComment)
 // get comments
 router.get('/:id', getComments)
 
-router.delete('/:id', verifyToken, deleteComment)
+router.delete('/:id',deleteComment)
 
 
 export default router

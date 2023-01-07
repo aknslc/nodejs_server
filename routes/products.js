@@ -14,11 +14,11 @@ router.get('/', getProducts);
 // get Product
 router.get('/:id', getProduct);
 // create Product
-router.post('/',verifyAdmin, createProduct)
+router.post('/', createProduct)
 // update Product
-router.put('/:id',verifyAdmin, updateProduct);
+router.put('/:id', updateProduct);
 // delete Product
-router.delete('/:id', verifyAdmin,deleteProduct);
+router.delete('/:id', deleteProduct);
 
 
 export default router;
