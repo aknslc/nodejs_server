@@ -22,11 +22,10 @@ const connect = async ()=>{
         throw err
     }
 }
-
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
 app.use('/api/auth', authRoute)
 app.use('/api/users', userRoute)
 app.use('/api/products', productRoute)
