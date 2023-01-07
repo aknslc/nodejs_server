@@ -6,7 +6,7 @@ import { verifyToken } from '../utils/verifyToken.js';
 const router = express.Router();
 
 
-// create product
+// create comment
 router.post('/:id',createComment)
 // get comments
 router.get('/:id', getComments)
