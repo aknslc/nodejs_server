@@ -51,13 +51,16 @@ export const login = async (req, res, next) => {
                 isAdmin: user.isAdmin
             },
             process.env.ACCESS_TOKEN_SECRET
-           
+
         )
 
         const { isAdmin, password, ...other } = user._doc
 
         res.cookie('access_token', accessToken, {
             httpOnly: true,
+            sameSite: "none",
+            secure: true,
+            domain: "https://test-client-three.vercel.app"
 
         });
 
