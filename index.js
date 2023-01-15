@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import env from 'dotenv'
 import cookieParser from 'cookie-parser';
 import cors from 'cors'
+import helmet from 'helmet';
 import userRoute from './routes/users.js'
 import productRoute from './routes/products.js'
 import authRoute from './routes/auth.js'
@@ -22,7 +23,12 @@ const connect = async ()=>{
         throw err
     }
 }
-app.use(cors());
+app.use(cors({
+    origin:"https://test-client-three.vercel.app",
+    credentials:true
+
+}));
+app.use(helmet())
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
