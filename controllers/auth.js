@@ -58,6 +58,8 @@ export const login = async (req, res, next) => {
 
         res.cookie('access_token', accessToken, {
             httpOnly: true,
+            secure: true,
+            
         });
 
         return res.status(200).json({ accessToken, isAdmin, ...other });
