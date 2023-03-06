@@ -12,21 +12,22 @@ import orderRoute from './routes/orders.js'
 
 env.config();
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 5000;
 
 // db connection
 const connect = async ()=>{
     try {
         mongoose.set("strictQuery", false);
-        await mongoose.connect(process.env.MONGO_CODE)
+        await mongoose.connect("mongodb+srv://aknselc:1234@cluster0.3dxdjdr.mongodb.net/e-commerce?retryWrites=true&w=majority", 
+        { useNewUrlParser: true }
+        )
     } catch (err) {
         throw err
     }
 }
 app.use(cors({
-    origin:"https://test-client-three.vercel.app",
-    credentials:true
-
+    // origin:"https://test-client-three.vercel.app",
+    // credentials:true
 }));
 app.use(helmet())
 app.use(express.json());

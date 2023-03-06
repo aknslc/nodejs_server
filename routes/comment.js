@@ -7,7 +7,7 @@ const router = express.Router();
 
 
 // create comment
-router.post('/:id', verifyToken,createComment)
+router.post('/:id',createComment)
 // get comments
 router.get('/:id', getComments)
 
